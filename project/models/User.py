@@ -22,5 +22,9 @@ class User(UserMixin, db.Model):
     govcard = db.Column(db.String(200), nullable=True)
     verified = db.Column(db.Integer(),nullable=True, default=0)
     addrss = db.Column(db.Text(), nullable=True)
-    blocked = db.Column(db.Integer,nullable=True, default=0)        
+    blocked = db.Column(db.Integer,nullable=True, default=0)    
+
+    @classmethod
+    def get_all(cls):
+        return cls.query.all()    
 
