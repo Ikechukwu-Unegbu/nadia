@@ -7,6 +7,6 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('home.html')
 
-@main.route('/profile')
-def profile():
-    return 'Profile'
+@main.route('/dashboard')
+def dashboard():
+    return render_template('authenticated/dashboard.html')
