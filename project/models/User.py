@@ -11,6 +11,7 @@ class GenderEnum(Enum):
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
+    username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(120))
     fullname = db.Column(db.String(200))
     phone = db.Column(db.String(100))
@@ -22,4 +23,4 @@ class User(UserMixin, db.Model):
     verified = db.Column(db.Integer(),nullable=True, default=0)
     addrss = db.Column(db.Text(), nullable=True)
     blocked = db.Column(db.Integer,nullable=True, default=0)        
-    
+
